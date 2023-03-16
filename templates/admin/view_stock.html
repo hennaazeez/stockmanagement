@@ -1,0 +1,52 @@
+{% extends "admin/admin base.html" %}
+{% block content %}
+
+
+<div class="card" style="width: 70rem;">
+    <div class="card-body">
+    <h5 class="card-title"> VIEW STOCK</h5>
+
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">SL</th>
+      <th scope="col">NAME</th>
+      <th scope="col">STOCK ID</th>
+        <th scope="col">DESCRIPTION</th>
+      <th scope="col">PRICE</th>
+        <th scope="col">QUANTITY</th>
+        <th></th><th></th>
+
+
+
+    </tr>
+  </thead>
+
+  <tbody>
+   {% for n in data %}
+   <tr>
+     <td>{{forloop.counter}}</td>
+     <td>{{n.name}}</td>
+     <td>{{n.stock_id}}</td>
+     <td>{{n.description}}</td>
+     <td>{{n.price}}</td>
+     <td>{{n.quantity}}</td>
+
+       <td> <a href= "{% url 'update' n.id %}" class="btn btn-primary" >update</a></td>
+              <td> <a href= "{% url 'delete' n.id %}" class="btn btn-primary" >delete</a></td>
+
+
+   </tr>
+
+   {% endfor %}
+  </tbody>
+        </table>
+
+  {% endblock %}
+
+
+
+  </div>
+</div>

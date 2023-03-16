@@ -1,0 +1,49 @@
+{% extends "admin/admin base.html" %}
+{% block content %}
+
+
+<div class="card" style="width: 70rem;">
+    <div class="card-body">
+    <h5 class="card-title"> VIEW CUSTOMER DATA</h5>
+
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">SL</th>
+      <th scope="col">USER</th>
+      <th scope="col">NAME</th>
+        <th scope="col">ADDRESS</th>
+      <th scope="col">MOBILE</th>
+        <th scope="col">EMAIL</th>
+        <th></th><th></th>
+
+
+
+    </tr>
+  </thead>
+
+  <tbody>
+   {% for n in data %}
+   <tr>
+     <td>{{forloop.counter}}</td>
+     <td>{{n.user}}</td>
+     <td>{{n.name}}</td>
+     <td>{{n.address}}</td>
+     <td>{{n.mobile}}</td>
+     <td>{{n.email}}</td>
+
+
+   </tr>
+
+   {% endfor %}
+  </tbody>
+        </table>
+
+  {% endblock %}
+
+
+
+  </div>
+</div>
